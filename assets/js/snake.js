@@ -1,15 +1,20 @@
 
 import { getInputDirection } from "./input.js"
 
+
+
 export const SNAKE_SPEED = 4
 const snakeBody = [{ x:10, y:11 }]
 let newSegments = 0
+let score = 0;
 
 export function update(){
     addSegments()
+    // updateScore()
     const inputDirection = getInputDirection()
     for (let i = snakeBody.length - 2 ; i >= 0 ; i--){
-        snakeBody[i + 1] = { ...snakeBody[i] }
+        snakeBody[i + 1] = { ...snakeBody[i] }  
+          
     }
 
     snakeBody[0].x += inputDirection.x
@@ -56,6 +61,8 @@ function eqalPositions(pos1, pos2) {
 function addSegments() {
     for (let i = 0; i < newSegments; i++) {
         snakeBody.push({...snakeBody[snakeBody.length - 1]})
+        score += 1;   
+        console.log(score) 
     }
 
     newSegments = 0

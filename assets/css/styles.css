@@ -10,8 +10,8 @@ body{
 
 #game-bord {
     background-color: #ccc;
-    width: 100vmin;
-    height: 100vmin;
+    width: 80vmin;
+    height: 80vmin;
     display: grid;
     grid-template-rows: repeat(21, 1fr);
     grid-template-columns: repeat(21, 1fr);
@@ -21,10 +21,34 @@ body{
 
 .snake {
     background-color: hsl(0, 100%, 50%);
-    border: .25vmin solid black;
+    /* border: .25vmin solid black; */
 }
 
 .food {
     background-color: hsl(95, 100%, 50%);
     border: .25vmin solid black;
 }
+
+.score {
+    position: absolute;
+    top: 8px;
+    height: 55px;
+    width: 500px;
+    background-color: black;
+}
+
+.current_score{
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #BBC6DC;
+ }
+
+ .high_score {
+    position: absolute;
+    top: 20px;
+    left: 300px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #BBC6DC;
+ }

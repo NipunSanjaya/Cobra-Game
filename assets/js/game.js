@@ -4,6 +4,7 @@ import { update as updateFood, drow as drowFood } from "./food.js"
 import { outSideGrid } from "./grid.js"
 
 
+
 let lastRenderTime = 0
 let gameOver = false
 const gameBord = document.getElementById('game-bord')
@@ -38,6 +39,7 @@ function update(){
     updateSnake()
     updateFood()
     checkDeath()
+    
 
 }
 
@@ -45,6 +47,7 @@ function drow(){
     gameBord.innerHTML = ''
     drowSnake(gameBord)
     drowFood(gameBord)
+    
 }
 
 function checkDeath() {
