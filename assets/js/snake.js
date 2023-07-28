@@ -1,12 +1,16 @@
 
 import { getInputDirection } from "./input.js"
 
-
+const scoreElement = document.querySelector('.current_score')
+const HighScoreElement = document.querySelector('.high_score')
 
 export const SNAKE_SPEED = 4
 const snakeBody = [{ x:10, y:11 }]
 let newSegments = 0
 let score = 0;
+
+let highScore = localStorage.getItem('high_score') || 0;
+HighScoreElement.innerHTML = `High Score : ${highScore}`
 
 export function update(){
     addSegments()
@@ -35,6 +39,11 @@ export function drow(gameBord){
 
 export function expandSnake(amount) {
     newSegments +=  amount
+    score++
+    highScore = score >= highScore ? score : highScore
+    localStorage.setItem("high_score", highScore)
+    scoreElement.innerHTML = `Score : ${score}`
+    HighScoreElement.innerHTML = `High Score : ${highScore}`
 }
 
 export function onSnake(position, {ignoreHead = false } = {}) {
@@ -61,8 +70,7 @@ function eqalPositions(pos1, pos2) {
 function addSegments() {
     for (let i = 0; i < newSegments; i++) {
         snakeBody.push({...snakeBody[snakeBody.length - 1]})
-        score += 1;   
-        console.log(score) 
+
     }
 
     newSegments = 0

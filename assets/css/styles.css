@@ -27,6 +27,7 @@ body{
 .food {
     background-color: hsl(95, 100%, 50%);
     border: .25vmin solid black;
+    border-radius: 100%;
 }
 
 .score {
