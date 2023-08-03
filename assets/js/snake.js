@@ -14,7 +14,7 @@ HighScoreElement.innerHTML = `High Score : ${highScore}`
 
 export function update(){
     addSegments()
-    // updateScore()
+
     const inputDirection = getInputDirection()
     for (let i = snakeBody.length - 2 ; i >= 0 ; i--){
         snakeBody[i + 1] = { ...snakeBody[i] }  
@@ -37,9 +37,9 @@ export function drow(gameBord){
     })
 }
 
-export function expandSnake(amount) {
+export function expandSnake(amount = 1) {
     newSegments +=  amount
-    score++
+    score +=amount
     highScore = score >= highScore ? score : highScore
     localStorage.setItem("high_score", highScore)
     scoreElement.innerHTML = `Score : ${score}`

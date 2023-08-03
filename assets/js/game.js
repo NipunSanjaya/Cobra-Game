@@ -31,6 +31,9 @@ function main(currentTime){
 
     update()
     drow()
+    // updateSnake();
+//   updateFood(gameBord); // Pass the gameBord parameter to updateFood()
+//   checkDeath();
 }
 
 window.requestAnimationFrame(main)
@@ -47,7 +50,7 @@ function drow(){
     gameBord.innerHTML = ''
     drowSnake(gameBord)
     drowFood(gameBord)
-    
+    // spawnBonusFood(gameBord)
 }
 
 function checkDeath() {
